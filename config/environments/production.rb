@@ -1,4 +1,4 @@
-Tester::Application.configure do
+MoxieForumStandalone::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -39,4 +39,6 @@ Tester::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
+  
+  config.active_support.deprecation = :notify
 end

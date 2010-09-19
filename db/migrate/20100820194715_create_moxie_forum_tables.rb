@@ -41,7 +41,12 @@ class CreateMoxieForumTables < ActiveRecord::Migration
     add_index :moxie_posts, [:author_id], :name => "posts_author_id"
     add_index :moxie_posts, [:created_at], :name => "posts_created_at"
 
-
+    f = Moxie::Forum.create( :title => "Sample forum", :description => "Description of this forum" )
+    t1 = Moxie::Topic.create( :forum => f, :title => "First topic" )
+    t2 = Moxie::Topic.create( :forum => f, :title => "Second topic" )
+    Moxie::Post.create( :topic => t1, :body => "First post in the first topic" )
+    Moxie::Post.create( :topic => t1, :body => "Second post in the first topic" )
+    Moxie::Post.create( :topic => t2, :body => "First post in the second topic" )
   end
 
   def self.down
