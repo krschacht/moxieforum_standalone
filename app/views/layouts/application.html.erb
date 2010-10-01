@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<hr>
-
+  <div class="navbar <%= 'hidden' unless current_user %>">
+    <%= link_to "Logout", user_session_path, :method => :delete %>
+  </div>
+    
   <%= content_for?(:content) ? yield(:content) : yield %>
-
-<hr>
 
 </body>
 </html>

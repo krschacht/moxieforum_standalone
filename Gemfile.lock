@@ -1,7 +1,7 @@
 PATH
   remote: /Users/krschacht/rails/plugins/moxieforum
   specs:
-    moxie_forum (0.2.3)
+    moxie_forum (0.1.0)
 
 GEM
   remote: http://rubygems.org/

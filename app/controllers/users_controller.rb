@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Account registered!"
-      redirect_back_or_default root_url
+      redirect_back_or_default moxie_forums_url
     else
       render :action => :new
     end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated."
-      redirect_to root_url
+      redirect_to moxie_forums_url
     else
       render :action => :edit
     end
